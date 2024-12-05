@@ -1,0 +1,6 @@
+@AdvanceDotNetBatch1.RepositoryPattern_HostAddress = http://localhost:5236
+
+GET {{AdvanceDotNetBatch1.RepositoryPattern_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
