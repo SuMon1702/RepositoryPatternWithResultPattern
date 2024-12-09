@@ -22,7 +22,9 @@ public partial class AppDbContext : DbContext
         => optionsBuilder.UseSqlServer("Server=.;Database=AdvanceC#Db;User Id=sa;Password=sasa@123;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
+
     {
+        modelBuilder.Entity<TblBlog>().HasQueryFilter(x => x.IsDeleted == false);
         modelBuilder.Entity<TblBlog>(entity =>
         {
             entity.HasKey(e => e.BlogId).HasName("PK_Blog");

@@ -6,69 +6,127 @@ using System.Reflection;
 
 namespace AdvanceDotNetBatch1.RepositoryPattern.Persistance.Reposistries
 {
-    public class BlogRepository : IBlogRepository  //this class talks to the database and fetches the data.To separate database-related operations from the rest of the application. It keeps the logic clean and organized.
+    public class BlogRepository: IBlogRepository
     {
-        internal readonly AppDbContext _context;  //context is a link to the database. It uses Entity Framework Core (EF Core) to interact with the database.
+        internal readonly AppDbContext _context;  
 
-        public BlogRepository(AppDbContext context) // Constructor: BlogRepository receives an AppDbContext instance via Dependency Injection(DI)
+        public BlogRepository(AppDbContext context) 
         {
             _context = context;
         }
 
         public async Task<Result<List<BlogModel>>> GetBlogListAsync(int pageNo, int pageSize, CancellationToken cs)
         {
-            Result<List<BlogModel>> result;  //Returns the data wrapped in a Result object (success or failure).
+            Result<List<BlogModel>> result;  
 
-            //Querying the database
-            var query = _context.TblBlogs.Skip((pageNo - 1) * pageSize).Take(pageSize); // drr ka paginate class ko tee tant extension anay nk htoke pee yay htr dl. aelo tee tant ma yay bll dii mr yay ll ya dll.
-            //Pagination: Instead of fetching all blogs, this line fetches only the blogs for the given page (e.g., Page 2 with 10 blogs per page).
+            
+            var query = _context.TblBlogs.Skip((pageNo - 1) * pageSize).Take(pageSize); 
 
-            //Selecting the data into the BlogModel( Map Data to BlogModel)
-            var lst = await query.Select(x => new BlogModel() //Each database row is converted into a BlogModel object.
+            
+            var lst = await query.Select(x => new BlogModel() 
             {
                 BlogId = x.BlogId,
                 BlogTitle = x.BlogTitle,
                 BlogAuthor = x.BlogAuthor,
                 BlogContent = x.BlogContent,
                 IsDeleted = x.IsDeleted
-            }).ToListAsync(cs);  //Converts the query into a list (List<BlogModel>) asynchronously with cancellation token.
+            }).ToListAsync(cs);  
 
-            result = Result<List<BlogModel>>.Success(lst); //Wrap Data in a Result Object
+            result = Result<List<BlogModel>>.Success(lst); 
 
-            return result;  //The result, containing the blog list and a success status, is sent back to whoever called this method.
+            return result;  
         }
+
+        public async Task<Result<List<BlogRequestModel>>> CreateBlogListAsync(BlogRequestModel model, CancellationToken cs)
+        {
+            Result<List<BlogRequestModel>> result;
+                
+                    try
+                    {
+                        var item = new TblBlog()
+                        {
+                            
+                            BlogTitle = model.BlogTitle,
+                            BlogAuthor = model.BlogAuthor,
+                            BlogContent = model.BlogContent,
+                            IsDeleted = false
+                        };
+                       
+                    await _context.TblBlogs.AddAsync(item, cs);
+                    await _context.SaveChangesAsync(cs);
+
+                result = Result<List<BlogRequestModel>>.Success(new List<BlogRequestModel> { model });
+
+
+            }
+                    catch (Exception ex)
+                    {
+                        result= Result<List<BlogRequestModel>>.Fail(ex);
+                    }
+            return result;
+                }
+
+        public async Task<Result<BlogRequestModel>> UpdateBlogAsync(int blogId, BlogRequestModel model, CancellationToken cs)
+        {
+            Result<BlogRequestModel> result;
+
+            try
+            {
+                var item = await _context.TblBlogs.FirstOrDefaultAsync(x => x.BlogId == blogId, cs);
+
+                if (item is null)
+                {
+                    result = Result<BlogRequestModel>.Fail("No Data Found");
+                    return result;
+                }
+                item.BlogTitle = model.BlogTitle;
+                item.BlogAuthor = model.BlogAuthor;
+                item.BlogContent = model.BlogContent;
+
+                _context.TblBlogs.Update(item);
+                await _context.SaveChangesAsync(cs);
+
+                result = Result<BlogRequestModel>.Success(model);
+            }
+            catch (Exception ex)
+            {
+                result = Result<BlogRequestModel>.Fail(ex);
+            }
+
+            return result;
+        }
+
+        public async Task<Result<BlogModel>> DeleteBlogAsync(int blogId, CancellationToken cs)
+        {
+            Result<BlogModel> result;
+
+            try
+            {
+                var item = await _context.TblBlogs.FirstOrDefaultAsync(x => x.BlogId == blogId, cs);
+
+                if (item is null)
+                {
+                    result = Result<BlogModel>.Fail("No Data Found");
+                    return result;
+                }
+
+                item.IsDeleted = true;
+
+               
+                await _context.SaveChangesAsync(cs);
+
+                result = Result<BlogModel>.Success();
+            }
+
+            catch (Exception ex)
+            {
+                result = Result<BlogModel>.Fail(ex);
+            }
+            return result;
+        }
+
     }
-}
-
-/*Final Analogy
-Repository Class: The Waiter
-The BlogRepository acts as the waiter who handles your request (fetch blogs) and talks to the kitchen (database).
-
-Constructor: The Waiter's Training
-The constructor (AppDbContext context) is like giving the waiter a connection to the kitchen so they can place orders (query the database).
-
-GetBlogListAsync Method: The Waiter's Task
-This method is the waiter's process:
-
-Take your order (page number and size).
-Fetch the right dishes (paginate and query).
-Arrange them neatly (convert rows to BlogModel).
-Deliver them to you (wrap in Result<T>).
-Result Pattern: The Food Plating
-The Result<T> ensures the food is always served properly:
-
-Success? Delicious food (data).
-Failure? Clear explanation (error message).
+    }
 
 
-In the analogy:
 
-The BlogRepository class is the waiter.
-It performs the tasks like taking your order (method calls), fetching data (querying the database), and returning the result.
-
-The IBlogRepository interface is like the menu.
-It defines what the waiter can do (e.g., fetch a list of blogs), but not how they do it.
-
-Analogy Summary:
-IBlogRepository: The menu listing available services.
-BlogRepository: The waiter who fulfills the services listed in the menu.*/
