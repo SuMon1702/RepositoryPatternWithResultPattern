@@ -1,0 +1,6 @@
+@SMDotNet.Serilog_HostAddress = http://localhost:5191
+
+GET {{SMDotNet.Serilog_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
