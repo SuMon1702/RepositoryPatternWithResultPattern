@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AdvanceDotNetBatch1.Database\AdvanceDotNetBatch1.Database.csproj" />
+    <ProjectReference Include="..\AdvanceDotNetBatch1.Shared\AdvanceDotNetBatch1.Shared.csproj" />
     <ProjectReference Include="..\AdvanceDotNetBatch1.Utlis\AdvanceDotNetBatch1.Utlis.csproj" />
   </ItemGroup>
 

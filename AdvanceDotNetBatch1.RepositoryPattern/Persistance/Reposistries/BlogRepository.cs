@@ -1,8 +1,8 @@
 ﻿using AdvanceDotNetBatch1.Database.Models;
 using AdvanceDotNetBatch1.RepositoryPattern.Models;
+using AdvanceDotNetBatch1.Shared;
 using AdvanceDotNetBatch1.Utlis;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 namespace AdvanceDotNetBatch1.RepositoryPattern.Persistance.Reposistries
 {
@@ -17,12 +17,13 @@ namespace AdvanceDotNetBatch1.RepositoryPattern.Persistance.Reposistries
 
         public async Task<Result<List<BlogModel>>> GetBlogListAsync(int pageNo, int pageSize, CancellationToken cs)
         {
-            Result<List<BlogModel>> result;  
+            Result<List<BlogModel>> result;
 
-            
-            var query = _context.TblBlogs.Skip((pageNo - 1) * pageSize).Take(pageSize); 
 
-            
+            var query = _context.TblBlogs
+                .Paginate(pageNo, pageSize);
+
+
             var lst = await query.Select(x => new BlogModel() 
             {
                 BlogId = x.BlogId,
