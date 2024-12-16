@@ -39,10 +39,18 @@ app.MapControllers();
 
 //BackgroundJob.Enqueue(() => Console.WriteLine("Fire and Forget job"));
 
-BackgroundJob.Schedule(()=> Console.WriteLine("Delay Job Sample"),TimeSpan.FromSeconds(30));
+//BackgroundJob.Schedule(() => Console.WriteLine("Delay Job Sample"), TimeSpan.FromSeconds(30));
 
 var Jobid = Guid.NewGuid().ToString();
-//RecurringJob.AddOrUpdate(Jobid,()=> Console.WriteLine("Recurring Job"),Cron.Minutely);
+//RecurringJob.AddOrUpdate(Jobid, () => Console.WriteLine("Recurring Job"), Cron.Minutely);
 //RecurringJob.AddOrUpdate(Jobid, () => Console.WriteLine("Recurring Job"), "0 9 * * *");
-RecurringJob.AddOrUpdate(Jobid, () => Console.WriteLine("Recurring Job"), "0 10 * * 1"); // min hour date month day
+//RecurringJob.AddOrUpdate(Jobid, () => Console.WriteLine("Recurring Job"), "0 10 * * 1"); // min hour date month day
+
+
+
+var firstJobid = BackgroundJob.Enqueue( () => Console.WriteLine("First job executed"));
+BackgroundJob.ContinueWith(firstJobid, () => Console.WriteLine("Continuation job executed"));
+
+
+
 app.Run();
