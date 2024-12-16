@@ -1,0 +1,6 @@
+@AdvanceDotNet.HangfireAPI_HostAddress = http://localhost:5131
+
+GET {{AdvanceDotNet.HangfireAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
