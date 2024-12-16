@@ -1,4 +1,4 @@
-﻿using AdvanceDotNetBatch1.shared;
+﻿using AdvanceDotNetBatch1.Shared;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,5 +25,7 @@ namespace SMAdvanceDotNet.UnitOfWorkPattern.Controllers
 
             return Ok(lst);
         }
+
+        
     }
 }
