@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AdvanceDotNetBatch1.Database\AdvanceDotNet.Database.csproj" />
     <ProjectReference Include="..\AdvanceDotNetBatch1.Database\AdvanceDotNetBatch1.Database.csproj" />
     <ProjectReference Include="..\AdvanceDotNetBatch1.Shared\AdvanceDotNetBatch1.Shared.csproj" />
     <ProjectReference Include="..\AdvanceDotNetBatch1.Utlis\AdvanceDotNet.Utlis.csproj" />
