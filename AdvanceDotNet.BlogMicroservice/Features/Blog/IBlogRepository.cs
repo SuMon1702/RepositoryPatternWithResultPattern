@@ -2,7 +2,7 @@
 
 namespace AdvanceDotNet.BlogMicroservice.Features.Blog
 {
-    public interface IBlogRepository: IRepositoryBase<TblBlog>
+    public interface IBlogRepository: RepositoryBase<TblBlog>
     {
     }
 }
