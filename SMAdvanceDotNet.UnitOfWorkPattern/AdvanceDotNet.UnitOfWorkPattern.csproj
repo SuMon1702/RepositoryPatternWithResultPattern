@@ -14,6 +14,9 @@
 		<ProjectReference Include="..\AdvancedDotNetBatch1.Database\AdvancedDotNetBatch1.Database.csproj" />
 		<ProjectReference Include="..\AdvancedDotNetBatch1.Shared\AdvancedDotNetBatch1.Shared.csproj" />
 		<ProjectReference Include="..\AdvancedDotNetBatch1.Utils\AdvancedDotNetBatch1.Utils.csproj" />
+		<ProjectReference Include="..\AdvanceDotNetBatch1.Database\AdvanceDotNet.Database.csproj" />
+		<ProjectReference Include="..\AdvanceDotNetBatch1.Shared\AdvanceDotNet.Shared.csproj" />
+		<ProjectReference Include="..\AdvanceDotNetBatch1.Utlis\AdvanceDotNet.Utlis.csproj" />
 	</ItemGroup>
 
 </Project>
