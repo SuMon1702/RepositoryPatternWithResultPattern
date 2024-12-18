@@ -10,4 +10,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AdvanceDotNetBatch1.Database\AdvanceDotNet.Database.csproj" />
+    <ProjectReference Include="..\AdvanceDotNetBatch1.Utlis\AdvanceDotNet.Utlis.csproj" />
+  </ItemGroup>
+
 </Project>

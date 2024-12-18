@@ -17,7 +17,7 @@ namespace AdvanceDotNet.BlogMicroservice.Features
         void Delete(T entity);
         void DeleteRange(IEnumerable<T> entities);
         void SaveChanges();
-        void SaveChangesAsync(CancellationToken cancellationToken);
+        Task SaveChangesAsync(CancellationToken cancellationToken);
 
 
     }
