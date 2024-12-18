@@ -17,6 +17,9 @@
     <ProjectReference Include="..\AdvanceDotNet.RepositoryPattern\AdvanceDotNet.RepositoryPattern.csproj" />
     <ProjectReference Include="..\AdvanceDotNet.Shared\AdvanceDotNet.Shared.csproj" />
     <ProjectReference Include="..\AdvanceDotNet.Utlis\AdvanceDotNet.Utlis.csproj" />
+    <ProjectReference Include="..\AdvanceDotNet.Database\AdvanceDotNet.Database.csproj" />
+    <ProjectReference Include="..\AdvanceDotNet.Shared\AdvanceDotNet.Shared.csproj" />
+    <ProjectReference Include="..\AdvanceDotNet.Utlis\AdvanceDotNet.Utlis.csproj" />
   </ItemGroup>
 
 </Project>

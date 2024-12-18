@@ -1,7 +1,6 @@
 ﻿using AdvanceDotNet.BlogMicroservice.Features;
 using AdvanceDotNet.BlogMicroservice.Features.Blog;
 using AdvanceDotNet.Database.Models;
-using AdvanceDotNet.RepositoryPattern.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace AdvanceDotNet.BlogMicroservice.Extensions;
