@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AdvanceDotNetBatch1.Database\AdvanceDotNet.Database.csproj" />
     <ProjectReference Include="..\AdvanceDotNetBatch1.Database\AdvanceDotNetBatch1.Database.csproj" />
+    <ProjectReference Include="..\AdvanceDotNetBatch1.Shared\AdvanceDotNet.Shared.csproj" />
     <ProjectReference Include="..\AdvanceDotNetBatch1.Shared\AdvanceDotNetBatch1.Shared.csproj" />
     <ProjectReference Include="..\AdvanceDotNetBatch1.Utlis\AdvanceDotNet.Utlis.csproj" />
     <ProjectReference Include="..\AdvanceDotNetBatch1.Utlis\AdvanceDotNetBatch1.Utlis.csproj" />
