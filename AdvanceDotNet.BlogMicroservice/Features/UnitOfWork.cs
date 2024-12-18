@@ -1,6 +1,17 @@
-﻿namespace AdvanceDotNet.BlogMicroservice.Features
+﻿using AdvanceDotNet.BlogMicroservice.Features.Blog;
+using AdvanceDotNetBatch1.Database.Models;
+
+namespace AdvanceDotNet.BlogMicroservice.Features
+{ 
+public class UnitOfWork : IUnitOfWork
 {
-    public class UnitOfWork
+    internal readonly AppDbContext _context;
+    public IBlogRepository BlogRepository { get; set; }
+
+    public UnitOfWork(AppDbContext context)
     {
+        _context = context;
+        BlogRepository ??= new BlogRepository(context);
     }
+}
 }
