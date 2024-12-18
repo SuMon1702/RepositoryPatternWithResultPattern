@@ -1,9 +1,9 @@
-﻿using AdvanceDotNetBatch1.Database.Models;
-using AdvanceDotNetBatch1.RepositoryPattern.Handlers;
-using AdvanceDotNetBatch1.RepositoryPattern.Persistance.Reposistries;
+﻿using AdvanceDotNet.Database.Models;
+using AdvanceDotNet.RepositoryPattern.Handlers;
+using AdvanceDotNet.RepositoryPattern.Persistance.Reposistries;
 using Microsoft.EntityFrameworkCore;
 
-namespace AdvanceDotNetBatch1.RepositoryPattern.Extensions
+namespace AdvanceDotNet.RepositoryPattern.Extensions
 {
     public static class DependencyInjectionExtension
     {

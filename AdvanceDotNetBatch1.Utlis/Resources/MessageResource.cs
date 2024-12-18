@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdvanceDotNetBatch1.Utlis.Resources
+namespace AdvanceDotNet.Utlis.Resources
 {
     public class MessageResource
     {

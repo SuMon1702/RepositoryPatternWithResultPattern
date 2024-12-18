@@ -1,5 +1,5 @@
 ﻿using AdvanceDotNet.BlogMicroservice.Features.Blog;
-using AdvanceDotNetBatch1.Database.Models;
+using AdvanceDotNet.Database.Models;
 
 namespace AdvanceDotNet.BlogMicroservice.Features
 { 

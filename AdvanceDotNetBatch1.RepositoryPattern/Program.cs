@@ -1,4 +1,4 @@
-using AdvanceDotNetBatch1.RepositoryPattern.Extensions;
+using AdvanceDotNet.RepositoryPattern.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

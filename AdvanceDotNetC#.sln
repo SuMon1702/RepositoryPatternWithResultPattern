@@ -35,9 +35,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitOfWorkPattern", "UnitOf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{3DBBB9EC-8E09-4936-ABF1-DBD762169462}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvanceDotNet.BlogMicroservice", "AdvanceDotNet.BlogMicroservice\AdvanceDotNet.BlogMicroservice.csproj", "{C60E501A-4B69-419C-A416-3497C049DD70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvanceDotNet.BlogMicroservice", "AdvanceDotNet.BlogMicroservice\AdvanceDotNet.BlogMicroservice.csproj", "{C60E501A-4B69-419C-A416-3497C049DD70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvanceDotNet.Gateway", "AdvanceDotNet.Gateway\AdvanceDotNet.Gateway.csproj", "{89C44557-7F8E-4FFE-AD1D-16BF790AD118}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvanceDotNet.Gateway", "AdvanceDotNet.Gateway\AdvanceDotNet.Gateway.csproj", "{89C44557-7F8E-4FFE-AD1D-16BF790AD118}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

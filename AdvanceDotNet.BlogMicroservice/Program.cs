@@ -1,5 +1,7 @@
 using AdvanceDotNet.BlogMicroservice.Extensions;
-using AdvanceDotNetBatch1.RepositoryPattern.Extensions;
+using AdvanceDotNet.BlogMicroservice.Extensions;
+using AdvanceDotNet.BlogMicroservice.Features.Blog;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +14,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDependencies(builder);
+builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+
+
 
 var app = builder.Build();
 
@@ -21,6 +26,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.UseHttpsRedirection();
 

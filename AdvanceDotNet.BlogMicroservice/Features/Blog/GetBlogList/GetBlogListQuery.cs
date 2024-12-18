@@ -1,4 +1,4 @@
-﻿using AdvanceDotNetBatch1.Utlis;
+﻿using AdvanceDotNet.Utlis;
 using MediatR;
 
 namespace AdvanceDotNet.BlogMicroservice.Features.Blog.GetBlogList

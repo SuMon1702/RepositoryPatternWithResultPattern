@@ -1,4 +1,4 @@
-﻿namespace AdvanceDotNetBatch1.RepositoryPattern.Models
+﻿namespace AdvanceDotNet.RepositoryPattern.Models
 {
     public class BlogModel
     {

@@ -1,12 +1,12 @@
-﻿using AdvanceDotNetBatch1.RepositoryPattern.Models;
-using AdvanceDotNetBatch1.RepositoryPattern.Persistance.Reposistries;
+﻿using AdvanceDotNet.RepositoryPattern.Models;
+using AdvanceDotNet.RepositoryPattern.Persistance.Reposistries;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata;
 using static System.Net.WebRequestMethods;
 
-namespace AdvanceDotNetBatch1.RepositoryPattern.Controllers
+namespace AdvanceDotNet.RepositoryPattern.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

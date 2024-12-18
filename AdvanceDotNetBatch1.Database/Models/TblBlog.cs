@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AdvanceDotNetBatch1.Database.Models;
+namespace AdvanceDotNet.Database.Models;
 
 public partial class TblBlog
 {

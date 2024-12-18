@@ -1,4 +1,4 @@
-﻿using AdvanceDotNetBatch1.Database.Models;
+﻿using AdvanceDotNet.Database.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq.Expressions;

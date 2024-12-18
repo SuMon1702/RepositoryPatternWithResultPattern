@@ -1,4 +1,4 @@
-﻿using AdvanceDotNetBatch1.Database.Models;
+﻿using AdvanceDotNet.Database.Models;
 using SMAdvanceDotNet.UnitOfWorkPattern.Persistance.Repositories;
 
 namespace SMAdvanceDotNet.UnitOfWorkPattern.Persistance

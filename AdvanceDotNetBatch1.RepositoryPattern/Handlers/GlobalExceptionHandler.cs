@@ -1,9 +1,9 @@
-﻿using AdvanceDotNetBatch1.Utlis.Enums;
-using AdvanceDotNetBatch1.Utlis;
+﻿using AdvanceDotNet.Utlis.Enums;
+using AdvanceDotNet.Utlis;
 using Microsoft.AspNetCore.Diagnostics;
 using Newtonsoft.Json;
 
-namespace AdvanceDotNetBatch1.RepositoryPattern.Handlers
+namespace AdvanceDotNet.RepositoryPattern.Handlers
 {
     public class GlobalExceptionHandler: IExceptionHandler
     {

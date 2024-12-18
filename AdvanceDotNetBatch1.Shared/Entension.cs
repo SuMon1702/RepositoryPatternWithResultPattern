@@ -1,4 +1,4 @@
-﻿namespace AdvanceDotNetBatch1.Shared
+﻿namespace AdvanceDotNet.Shared
 {
     public static class Entension
     {

@@ -1,10 +1,10 @@
-﻿using AdvanceDotNetBatch1.Database.Models;
-using AdvanceDotNetBatch1.RepositoryPattern.Models;
-using AdvanceDotNetBatch1.Shared;
-using AdvanceDotNetBatch1.Utlis;
+﻿using AdvanceDotNet.Database.Models;
+using AdvanceDotNet.RepositoryPattern.Models;
+using AdvanceDotNet.Shared;
+using AdvanceDotNet.Utlis;
 using Microsoft.EntityFrameworkCore;
 
-namespace AdvanceDotNetBatch1.RepositoryPattern.Persistance.Reposistries
+namespace AdvanceDotNet.RepositoryPattern.Persistance.Reposistries
 {
     public class BlogRepository: IBlogRepository
     {

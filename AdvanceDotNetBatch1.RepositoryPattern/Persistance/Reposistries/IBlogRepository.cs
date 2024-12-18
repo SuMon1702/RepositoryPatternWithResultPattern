@@ -1,8 +1,8 @@
-﻿using AdvanceDotNetBatch1.RepositoryPattern.Models;
-using AdvanceDotNetBatch1.Utlis;
+﻿using AdvanceDotNet.RepositoryPattern.Models;
+using AdvanceDotNet.Utlis;
 using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace AdvanceDotNetBatch1.RepositoryPattern.Persistance.Reposistries
+namespace AdvanceDotNet.RepositoryPattern.Persistance.Reposistries
 {
     public interface IBlogRepository
     {
