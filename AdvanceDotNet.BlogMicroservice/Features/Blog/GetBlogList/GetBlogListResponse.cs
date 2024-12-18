@@ -1,6 +1,7 @@
-﻿namespace AdvanceDotNet.BlogMicroservice.Features.Blog.GetBlogList
+﻿using AdvanceDotNetBatch1.Database.Models;
+
+namespace AdvanceDotNet.BlogMicroservice.Features.Blog.GetBlogList
 {
-    public class GetBlogListResponse
-    {
-    }
+    public record GetBlogListResponse(List<TblBlog> Blogs);
+    
 }

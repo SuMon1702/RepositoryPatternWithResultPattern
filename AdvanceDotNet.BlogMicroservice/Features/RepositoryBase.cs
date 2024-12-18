@@ -4,10 +4,16 @@ using System.Linq.Expressions;
 
 namespace AdvanceDotNet.BlogMicroservice.Features
 {
-    public class RepositoryBase<T> : RepositoryBase<T> where T : class
+    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
         internal readonly AppDbContext _context;
         internal readonly DbSet<T> _dbSet;
+        private AppDbContext context;
+
+        public RepositoryBase(AppDbContext context)
+        {
+            this.context = context;
+        }
 
         public RepositoryBase(AppDbContext context, DbSet<T> dbSet)
         {

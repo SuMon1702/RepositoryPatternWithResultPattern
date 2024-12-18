@@ -4,11 +4,8 @@ namespace AdvanceDotNet.BlogMicroservice.Features.Blog
 {
     public class BlogRepository : RepositoryBase<TblBlog>, IBlogRepository
     {
-        private AppDbContext context;
-
-        public BlogRepository(AppDbContext context)
+        public BlogRepository(AppDbContext context) : base(context)
         {
-            this.context = context;
         }
     }
 }

@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AdvanceDotNetBatch1.Database\AdvanceDotNet.Database.csproj" />
+    <ProjectReference Include="..\AdvanceDotNetBatch1.Shared\AdvanceDotNet.Shared.csproj" />
     <ProjectReference Include="..\AdvanceDotNetBatch1.Utlis\AdvanceDotNet.Utlis.csproj" />
   </ItemGroup>
 

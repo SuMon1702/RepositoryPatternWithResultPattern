@@ -2,7 +2,7 @@
 
 namespace AdvanceDotNet.BlogMicroservice.Features
 {
-    public interface RepositoryBase<T> where T : class
+    public interface IRepositoryBase<T> where T : class
 
     {
         IQueryable<T> Query(Expression<Func<T, bool>> expression);
