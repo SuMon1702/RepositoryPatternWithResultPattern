@@ -9,7 +9,7 @@ namespace AdvanceDotNet.BlogMicroservice.Features
         internal readonly AppDbContext _context;
         internal readonly DbSet<T> _dbSet;
 
-        public RepositoryBase (AppDbContext context, DbSet<T> dbSet)
+        public RepositoryBase(AppDbContext context, DbSet<T> dbSet)
         {
             _context = context;
             _dbSet = dbSet;
@@ -17,62 +17,62 @@ namespace AdvanceDotNet.BlogMicroservice.Features
 
         public void Add(T entity)
         {
-           
+            _dbSet.Add(entity);
         }
 
-        public Task AddAsync(T entity, CancellationToken cs = default)
+        public async Task AddAsync(T entity, CancellationToken cs = default)
         {
-            throw new NotImplementedException();
+            await _dbSet.AddAsync(entity, cs);
         }
 
-        public void AddRange(T entity)
+        public void AddRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+            _dbSet.AddRange(entities);
         }
 
-        public Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cs = default)
+        public async Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cs = default)
         {
-            throw new NotImplementedException();
+            await _dbSet.AddRangeAsync(entities, cs);
         }
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Remove(entity);
         }
 
         public void DeleteRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+           _dbSet.RemoveRange(entities);
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _dbSet.AsEnumerable();
         }
 
         public IQueryable<T> Query(Expression<Func<T, bool>> expression)
         {
-            throw new NotImplementedException();
+            return expression is not null? _dbSet.AsQueryable() : _dbSet.Where(expression);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
 
-        public void SaveChangesAsync(CancellationToken cancellationToken)
+        public async Task SaveChangesAsync(CancellationToken cs= default)
         {
-            throw new NotImplementedException();
+            await _context.SaveChangesAsync(cs);
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Update(entity);
         }
 
         public void UpdateRange(IEnumerable<T> entities)
         {
-            throw new NotImplementedException();
+           _dbSet.UpdateRange(entities);
         }
     }
 }
