@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AdvanceDotNet.Database\AdvanceDotNet.Database.csproj" />
-    <ProjectReference Include="..\AdvanceDotNet.Shared\AdvanceDotNet.Shared.csproj" />
-    <ProjectReference Include="..\AdvanceDotNet.Utlis\AdvanceDotNet.Utlis.csproj" />
+    <ProjectReference Include="..\AdvanceDotNetC#.Database\AdvanceDotNetC#.Database.csproj" />
+    <ProjectReference Include="..\AdvanceDotNetC#.Shared\AdvanceDotNetC#.Shared.csproj" />
+    <ProjectReference Include="..\AdvanceDotNetC#.Utlis\AdvanceDotNetC#.Utlis.csproj" />
   </ItemGroup>
 
 </Project>
