@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -13,6 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AdvanceDotNetBatch1.Database\AdvanceDotNet.Database.csproj" />
+    <ProjectReference Include="..\AdvanceDotNetBatch1.Shared\AdvanceDotNet.Shared.csproj" />
+    <ProjectReference Include="..\AdvanceDotNetBatch1.Utlis\AdvanceDotNet.Utlis.csproj" />
     <ProjectReference Include="..\AdvanceDotNetC#.Database\AdvanceDotNetC#.Database.csproj" />
     <ProjectReference Include="..\AdvanceDotNetC#.RepositoryPattern\AdvanceDotNetC#.RepositoryPattern.csproj" />
     <ProjectReference Include="..\AdvanceDotNetC#.Shared\AdvanceDotNetC#.Shared.csproj" />
