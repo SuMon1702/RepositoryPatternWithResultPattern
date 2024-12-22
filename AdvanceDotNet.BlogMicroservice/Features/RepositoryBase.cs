@@ -58,7 +58,7 @@ namespace AdvanceDotNet.BlogMicroservice.Features
 
         public IQueryable<T> Query(Expression<Func<T, bool>> expression)
         {
-            return expression is not null? _dbSet.AsQueryable() : _dbSet.Where(expression);
+            return expression is not null ? _dbSet.AsQueryable() : _dbSet.Where(expression);
         }
 
         public void SaveChanges()
